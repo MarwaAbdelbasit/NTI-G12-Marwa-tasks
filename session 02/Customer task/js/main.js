@@ -142,7 +142,7 @@ if(showSingle) {
 }
 
 if(withdrawForm) {
-    if(!localStorage.getItem("customerId")) window.location.replace("index.html");
+    if(!localStorage.getItem("customerId")) window.location.replace("showSingle.html");
     const index = localStorage.getItem("customerId");
     // console.log(index);
     const customers = readLocalStorage();
@@ -168,12 +168,11 @@ if(withdrawForm) {
         }
         writeLocalStorage(customers);
         window.location.replace("showSingle.html");
-        localStorage.removeItem("customerId");
     });
 }
 
 if(addBalanceForm) {
-    if(!localStorage.getItem("customerId")) window.location.replace("index.html");
+    if(!localStorage.getItem("customerId")) window.location.replace("showSingle.html");
     const index = localStorage.getItem("customerId");
     const customers = readLocalStorage();
 
