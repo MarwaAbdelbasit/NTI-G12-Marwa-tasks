@@ -1,0 +1,38 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <table class="table table-bordered">
+        <thead>
+            <th>Post Id</th>
+            <th>Title</th>
+            <th>Auther</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {{#if noData}}
+            <tr class="alert alert-danger">
+                <td colspan="5">No posts available</td>
+            </tr>
+            {{else}}
+            {{#each allPosts}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.author}}</td>
+                    <td>{{this.email}}</td>
+                    <td>
+                        <a href="/showPost/{{this.id}}" class="btn btn-warning mx-2">Show</a>
+                        <a href="/editPost/{{this.id}}" class="btn btn-primary mx-2">Edit</a>
+                        <a href="/delPost/{{this.id}}" class="btn btn-danger mx-2">Delete</a>
+                    </td>
+                </tr>
+            {{/each}}
+            {{/if}}
+        </tbody>
+    </table>
+    <div class="text-right">
+        <a href="/deleteAll" class="btn btn-danger">Delete all</a>
+    </div>
+</section>
+{{>footer}}
