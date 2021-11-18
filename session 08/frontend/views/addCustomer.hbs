@@ -1,0 +1,30 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <form class="border border-primary p-3" method="post">
+        <div class="mb-3">
+            <input name="fname" class="form-control" placeholder="First Name">
+        </div>
+        <div class="mb-3">
+            <input name="lname" class="form-control" placeholder="Last Name">
+        </div>
+        <div class="mb-3">
+            <input name="email" class="form-control" placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <label class="mb-3 form-label">Address Details: </label>
+            <div class="row">
+                <div class="mb-3"><input name="city" class="form-control" placeholder="City"></div>
+                <div class="mb-3"><input name="street" class="form-control" placeholder="Street"></div>
+                <div class="mb-3"><input name="building" class="form-control" placeholder="Building Number"></div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input name="intialBalance" class="form-control" placeholder="Intial Balance">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">ADD New Customer</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

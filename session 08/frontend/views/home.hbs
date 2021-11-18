@@ -1,0 +1,33 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-4">
+    <table class="table table-dark table-striped">
+        <thead>
+            <th># ID</th>
+            <th>name</th>
+            <th>Current Balance</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {{#if noData}}
+            <tr class="alert alert-danger p-2"><td colspan="5">No Users Yet</td></tr>
+            {{else}}
+            {{#each data}}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.fname}} {{this.lname}}</td>
+                <td>{{this.intialBalance}}</td>
+                <td>
+                    <a href="/showSingle/{{this._id}}" class="btn btn-primary mx-2">Show</a>
+                    <a href="/balanceOper/withdraw/{{this._id}}" class="btn btn-warning mx-2">Withdraw</a>
+                    <a href="/balanceOper/addBalance/{{this._id}}" class="btn btn-success mx-2">Add balance</a>
+                    <a href="/delete/{{this._id}}" class="btn btn-danger mx-2">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+            {{/if}}
+        </tbody>
+    </table>
+    <div class="mb-3 text-right"><a href="/delAll" class="btn btn-danger">Delete all</a></div>
+</section>
+{{>footer}}

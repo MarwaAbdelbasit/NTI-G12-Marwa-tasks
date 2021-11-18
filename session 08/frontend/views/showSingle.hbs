@@ -1,0 +1,42 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <b>Customer Information</b> 
+            </div>
+            <ul class="list-group list-group-flush" id="showList">
+                <li class="list-group-item">Account number: {{user._id}}</li>
+                <li class="list-group-item">Client name: {{user.fname}} {{user.lname}}</li>
+                <li class="list-group-item">Client email: {{user.email}}</li>
+                <li class="list-group-item">Address: {{user.building}} {{user.street}} street, {{user.city}}</li>
+                <li class="list-group-item">Initial Balance: {{user.intialBalance}}</li>
+            </ul>
+        </div>
+        
+        <table class="table table-bordered mt-3">
+            <thead>
+                <td>Transactions</td>
+            </thead>
+            <thead>
+                <td>Type</td>
+                <td>Balance</td>
+            </thead>
+            <tbody id="singleTable">
+                {{#if noTransactions}}
+                <tr class="alert alert-danger">
+                    <td colspan="5">No transactions took place</td>
+                </tr>
+                {{else}}
+                {{#each client.transactions}}
+                <tr>
+                    <td>{{this.type}}</td>
+                    <td>{{this.amount}}</td>
+                </tr>
+                {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+        <div class="container border border-primary rounded p-3" id="single">Total Balance: {{client.balance}}</div>
+</section>
+{{>footer}}

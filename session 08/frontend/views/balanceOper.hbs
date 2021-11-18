@@ -1,0 +1,16 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <div class="border border-primary p-3 bg-light">
+        <h4 class="text-primary">Customer id: {{userId}}</h4>
+    </div>
+    <form class="my-3 border border-primary p-4" method="post">
+        <div class="mb-3">
+            <input placeholder="Enter amount" name="amount" class="form-control">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">{{transactionType}}</button>
+        </div>
+    </form>
+</section>
+{{>footer}}
